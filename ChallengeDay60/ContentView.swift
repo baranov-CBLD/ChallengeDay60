@@ -8,17 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(UserVM.self) var userVM
+    
+    @State private var path = NavigationPath()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack(path: $path) {
+            List {
+                ForEach (userVM.users) { user in
+                    NavigationLink(value: user) {
+                        HStack {
+                            Text(user.name)
+                            Spacer()
+                            if user.isActive {
+                                Text("Online")
+                                    .foregroundStyle(.green)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationDestination(for: User.self) { user in
+                UserView(user: user, path: $path)
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    return ContentView()
+        .environment(UserVM.usersExample)
 }
