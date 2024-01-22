@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DEDDAE9C2B5E7D4A00784967 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDAE9B2B5E7D4A00784967 /* Friend.swift */; };
+		DEE072432B5EAB9900B44C30 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE072422B5EAB9900B44C30 /* UsersView.swift */; };
+		DEE072612B5EB9EA00B44C30 /* dataExstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE072602B5EB9EA00B44C30 /* dataExstension.swift */; };
 		DEEFB1A72B5DB8CF00C3766E /* ChallengeDay60App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEFB1A62B5DB8CF00C3766E /* ChallengeDay60App.swift */; };
 		DEEFB1A92B5DB8CF00C3766E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEFB1A82B5DB8CF00C3766E /* ContentView.swift */; };
 		DEEFB1AB2B5DB8D000C3766E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEEFB1AA2B5DB8D000C3766E /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DEDDAE9B2B5E7D4A00784967 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		DEE072422B5EAB9900B44C30 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		DEE072602B5EB9EA00B44C30 /* dataExstension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataExstension.swift; sourceTree = "<group>"; };
 		DEEFB1A32B5DB8CF00C3766E /* ChallengeDay60.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeDay60.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEEFB1A62B5DB8CF00C3766E /* ChallengeDay60App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDay60App.swift; sourceTree = "<group>"; };
 		DEEFB1A82B5DB8CF00C3766E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,8 +65,11 @@
 			children = (
 				DEEFB1A62B5DB8CF00C3766E /* ChallengeDay60App.swift */,
 				DEEFB1A82B5DB8CF00C3766E /* ContentView.swift */,
+				DEE072422B5EAB9900B44C30 /* UsersView.swift */,
 				DEEFB1B82B5DD20E00C3766E /* UserView.swift */,
 				DEEFB1B42B5DB8E000C3766E /* User.swift */,
+				DEDDAE9B2B5E7D4A00784967 /* Friend.swift */,
+				DEE072602B5EB9EA00B44C30 /* dataExstension.swift */,
 				DEEFB1B62B5DBA4B00C3766E /* UserVM.swift */,
 				DEEFB1AA2B5DB8D000C3766E /* Assets.xcassets */,
 				DEEFB1AC2B5DB8D000C3766E /* Preview Content */,
@@ -147,9 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEEFB1A92B5DB8CF00C3766E /* ContentView.swift in Sources */,
+				DEE072612B5EB9EA00B44C30 /* dataExstension.swift in Sources */,
 				DEEFB1B72B5DBA4B00C3766E /* UserVM.swift in Sources */,
 				DEEFB1B92B5DD20E00C3766E /* UserView.swift in Sources */,
+				DEDDAE9C2B5E7D4A00784967 /* Friend.swift in Sources */,
 				DEEFB1A72B5DB8CF00C3766E /* ChallengeDay60App.swift in Sources */,
+				DEE072432B5EAB9900B44C30 /* UsersView.swift in Sources */,
 				DEEFB1B52B5DB8E000C3766E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

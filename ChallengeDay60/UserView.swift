@@ -5,13 +5,15 @@
 //  Created by Kirill Baranov on 21/01/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct UserView: View {
     
-    @Environment(UserVM.self) var userVM
+    @Query var users: [User]
     
     var user: User
+    var userVM = UserVM()
     
     @Binding var path: NavigationPath
     
@@ -33,15 +35,11 @@ struct UserView: View {
             Section("Friends") {
                 ForEach (user.friends) { friend in
                     Button(friend.name) {
-                            path = NavigationPath([userVM.users.first(where: { $0.id == friend.id })!])
+                            path = NavigationPath([users.first(where: { $0.id == friend.id })!])
                     }
-//                    NavigationLink(friend.name, value: friend)
                 }
             }
         }
-//        .navigationDestination(for: Friend.self) { friend in
-//            UserView(user: userVM.users.first(where: { $0.id == friend.id })!, path: $path)
-//        }
         .navigationTitle(user.name)
         .toolbar {
             Button("Save") {
@@ -51,9 +49,4 @@ struct UserView: View {
             }
         }
     }
-}
-
-#Preview {
-    UserView(user: UserVM.usersExample.users[0], path: .constant(NavigationPath()))
-        .environment(UserVM.usersExample)
 }

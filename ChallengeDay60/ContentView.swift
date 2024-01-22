@@ -5,38 +5,32 @@
 //  Created by Kirill Baranov on 21/01/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    
-    @Environment(UserVM.self) var userVM
-    
+    @Environment(\.modelContext) var modelContext
+        
     @State private var path = NavigationPath()
+    
+    @State private var dataLoaded = false
     
     var body: some View {
         NavigationStack(path: $path) {
-            List {
-                ForEach (userVM.users) { user in
-                    NavigationLink(value: user) {
-                        HStack {
-                            Text(user.name)
-                            Spacer()
-                            if user.isActive {
-                                Text("Online")
-                                    .foregroundStyle(.green)
-                            }
-                        }
-                    }
-                }
-            }
-            .navigationDestination(for: User.self) { user in
-                UserView(user: user, path: $path)
+            
+            if dataLoaded {
+                UsersView(path: $path)
+            } else {
+                Text("Data is loading")
             }
         }
+        .task {
+            dataLoaded = await loadUsers(modelContext: modelContext)
+        }
     }
+    
 }
 
 #Preview {
-    return ContentView()
-        .environment(UserVM.usersExample)
+    ContentView()
 }
